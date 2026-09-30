@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools==80.9.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "signalpost-norway-agent"
+version = "1.0.0"
+description = "Source-backed Norwegian company research agent for the Builderr Signalpost challenge."
+requires-python = ">=3.10,<3.14"
+dependencies = [
+  "requests==2.32.4",
+  "beautifulsoup4==4.13.4",
+  "pypdf==6.0.0",
+  "lxml==6.0.1",
+  "python-dateutil==2.9.0.post0",
+]
+
+[project.scripts]
+signalpost = "signalpost_agent.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["signalpost_agent*"]
